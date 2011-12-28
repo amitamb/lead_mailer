@@ -6,7 +6,10 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sendgrid'
-gem 'sqlite3'
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 
 # Gems used only for assets and not required
