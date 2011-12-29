@@ -20,6 +20,12 @@
   <%= @lead_mail.from_user_id %>
 </p>
 
+<p>
+  <b>Status:</b>
+  <%= @lead_mail.status %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_lead_mail_path(@lead_mail) %> |
 <%= link_to 'Back', lead_mails_path %>

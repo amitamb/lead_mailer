@@ -13,6 +13,11 @@ class LeadMail < ActiveRecord::Base
   def send_this_week?
     created_at.year == Date.today.year && created_at.strftime("%U") == Date.today.strftime("%U")
   end
+  
+  def status
+    status = read_attribute(:status)
+    status.present? ? status.status.capitalize : "Not known"
+  end
 
   after_create :send_email
 
