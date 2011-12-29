@@ -91,6 +91,7 @@ class LeadMailsController < ApplicationController
     rescue Exception => e
       # do nothing
       #puts e.to_s
+      puts "Exception found"
     end
     render :text => "", :status => 200
   end
