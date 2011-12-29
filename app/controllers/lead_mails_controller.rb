@@ -88,6 +88,7 @@ class LeadMailsController < ApplicationController
     begin
       @lead_mail = LeadMail.find( params[:lead_mail_id] )
       @lead_mail.email = params[:event]
+      @lead_mail.save
     rescue Exception => e
       # do nothing
       #puts e.to_s
