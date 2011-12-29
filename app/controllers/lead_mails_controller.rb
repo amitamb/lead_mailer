@@ -85,8 +85,13 @@ class LeadMailsController < ApplicationController
     puts "Got called for an event"
     puts params.inspect
     puts "params above"
-    @lead_mail = LeadMail.find( params[:lead_mail_id] )
-    @lead_mail.email = params[:event]
+    begin
+      @lead_mail = LeadMail.find( params[:lead_mail_id] )
+      @lead_mail.email = params[:event]
+    rescue Exception => e
+      # do nothing
+      #puts e.to_s
+    end
     render :text => "", :status => 200
   end
   
