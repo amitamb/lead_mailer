@@ -80,4 +80,11 @@ class LeadMailsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def event
+    puts "Got called for an event"
+    puts params.inspect
+    puts "params above"
+  end
+  
 end
