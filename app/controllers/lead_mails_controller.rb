@@ -85,6 +85,7 @@ class LeadMailsController < ApplicationController
     puts "Got called for an event"
     puts params.inspect
     puts "params above"
+    render :text => "", :status => 200
   end
   
 end
