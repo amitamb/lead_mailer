@@ -13,4 +13,13 @@ class LeadMail < ActiveRecord::Base
   def send_this_week?
     created_at.year == Date.today.year && created_at.strftime("%U") == Date.today.strftime("%U")
   end
+  
+  after_create :send_email
+  
+  #private
+  
+  def send_email
+    LeadSender.lead_mail(self).deliver
+  end
+
 end
