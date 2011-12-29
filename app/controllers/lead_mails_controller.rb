@@ -80,7 +80,7 @@ class LeadMailsController < ApplicationController
       format.json { head :ok }
     end
   end
-  
+
   def event
     @lead_mail = LeadMail.find_by_id( params[:lead_mail_id] ).first
     if @lead_mail.present?
