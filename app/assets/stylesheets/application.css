@@ -5,3 +5,13 @@
  *= require_self
  *= require_tree . 
 */
+
+table {
+  border:1px solid #ddd;
+  border-spacing:1;
+}
+
+table td, table th {
+  border:1px solid #ddd;
+  padding:4px;
+}

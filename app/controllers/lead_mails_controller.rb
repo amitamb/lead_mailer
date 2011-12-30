@@ -81,8 +81,9 @@ class LeadMailsController < ApplicationController
     end
   end
 
+  # POST /lead_mails/event
   def event
-    @lead_mail = LeadMail.find_by_id( params[:lead_mail_id] ).first
+    @lead_mail = LeadMail.find_by_id( params[:lead_mail_id] )
     if @lead_mail.present?
       @lead_mail.status = params[:event]
       @lead_mail.save
