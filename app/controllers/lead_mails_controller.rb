@@ -84,7 +84,8 @@ class LeadMailsController < ApplicationController
   # POST /lead_mails/event
   def event
     @lead_mail = LeadMail.find_by_id( params[:lead_mail_id] )
-    if @lead_mail.present?
+    unless @lead_mail.nil?
+      puts "Updating status"
       @lead_mail.status = params[:event]
       @lead_mail.save
     end
