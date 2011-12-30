@@ -15,7 +15,7 @@ class LeadMail < ActiveRecord::Base
   end
 
   def status
-    status = self[:status] #read_attribute(:status)
+    status = read_attribute(:status)
     status.present? ? status.capitalize : "Not known"
   end
 
